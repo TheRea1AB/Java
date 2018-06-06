@@ -1,0 +1,64 @@
+//Arrays
+//An array is an object that can store a group of values, all of the same type.
+import java.util.Scanner; //Needed for Scanner Class
+import java.util.Arrays;
+public class ProbabilityCounter {
+	public static void main(String[] args){
+		final int numElements = 7;
+		int[] numbers = new int[numElements];
+		Scanner keyboard = new Scanner(System.in);
+		
+		//Number 1 stored in index 0
+		System.out.println("Number 1: ");
+		numbers[0] = keyboard.nextInt();
+		//Number 2 stored in index 1
+		System.out.println("Number 2: ");
+		numbers[1] = keyboard.nextInt();
+		//Number 3 stored in index 2
+		System.out.println("Number 3: ");
+		numbers[2] = keyboard.nextInt();
+		//Number 4 stored in index 3
+		System.out.println("Number 4: ");
+		numbers[3] = keyboard.nextInt();
+		//Number 5 stored in index 4
+		System.out.println("Number 5: ");
+		numbers[4] = keyboard.nextInt();
+		//Number 6 stored in index 5
+		System.out.println("Number 6: ");
+		numbers[5] = keyboard.nextInt();
+		//Number 7 stored in index 6
+		System.out.println("Number 7: ");
+		numbers[6] = keyboard.nextInt();
+		
+		// Sorting the array
+		
+		Arrays.sort(numbers);
+		for(int num: numbers){
+		System.out.print(num+" ");
+		}
+		//Median
+		System.out.println("");
+		double median = numbers[3];
+		System.out.println("Median: "+median);
+		
+		// Mean
+		double mean = (numbers[0]+numbers[1]+numbers[2]+numbers[3]+numbers[4]+numbers[5]+numbers[6])/7;
+		System.out.println("Mean: " + mean);
+		
+		//Range
+		double range = numbers[6] - numbers[0];
+		System.out.println("Range: "+range);
+	
+	// Mode
+		int counter = 0;						// assign counter to zero
+		for (int i = 0; i < numbers.length-1; i++){ // Loop through the array
+			if(numbers[i] == numbers[i+1]){
+				counter = counter+1;
+				int mode = numbers[i];	// Store potential mode
+				System.out.println("Mode: "+mode); //Print mode
+			} 
+		}
+
+	}
+
+}
